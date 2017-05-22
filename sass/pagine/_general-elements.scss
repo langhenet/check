@@ -1,0 +1,266 @@
+body {
+  font-size: $font-size;
+  font-family: 'Open Sans';
+}
+
+p {
+  @include font(p);
+}
+
+/*
+ * Selettore Lingua
+ */
+.dropdown.cc-dropdown-header_language_dropdown.sel.hero-dropdown {
+  display: none;
+}
+
+/*
+ * Keyword Field
+ */
+#bar_div {
+  display: none;
+}
+
+/*
+ * Contenitore calendario
+ */
+#sidebar-wrapper {
+  padding: 0;
+}
+
+
+/*
+ * Calendario
+ */
+#cf-cal table.cf-cal-sm {
+  font-size: 1em;
+  border: 0;
+
+  //THEAD della tabella
+  thead {
+
+    // selettore mese
+    tr.head {
+      line-height: $line-height;
+      height: $line-height * 2;
+      background-color: $viola-washed;
+      color: #fff;
+
+      td a {
+        background: transparent !important;
+        color: #fff !important;
+        border: 0 !important;
+        line-height: $line-height;
+      }
+
+      select {
+        width: 100% !important;
+        max-width: 100%;
+        font-size: 1em;
+        text-align: center;
+        height: auto;
+        background: $viola-washed;
+        border: 0;
+        color: #fff;
+        text-align-last: center;
+      }
+    }
+
+    //Riga giorni
+    tr {
+      height: 1.5em;
+
+      th {
+        font-size: 0.75em;
+        text-transform: uppercase;
+        padding: 0 !important;
+        line-height: 3em !important;
+      }
+    }
+  }
+
+  tbody {
+    tr td {
+      width: auto;
+      height: auto;
+      vertical-align: middle !important;
+      padding: 0.75em !important;
+      background: lighten($verde, 35%);
+
+      a {
+        line-height: $line-height;
+        border: 0 !important;
+        border-radius: 100%;
+        background: transparent;
+        color: $grigio;
+
+        &:hover {
+          border: 0;
+        }
+      }
+
+      //Classe TD passata
+      &.X {
+        background: lighten($grigio-chiarissimo, 5%);
+
+        a {
+          color: $grigio;
+        }
+      }
+
+      //Classe TD non disponibile
+      &.F {
+        background: lighten($rosso, 30%);
+
+        a {
+          font-weight: normal;
+        }
+      }
+
+      //Classe TD Selezionato
+      &.Q {
+        background: $verde;
+
+        a {
+          //background: $verde;
+          color: #fff !important;
+          opacity: 1;
+        }
+      }
+
+      //CLasse TD Completo E Selezionato
+
+      &.F.Q {
+        background: $rosso;
+
+      a {
+          color: #fff !important;
+          opacity: 1;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Reset impostazion THEAD
+ */
+.table > thead > tr >th {
+  vertical-align: middle;
+}
+
+/**********************************************************************************************************************/
+/* CONTENT
+/**********************************************************************************************************************/
+#content {
+  margin-top: 0 !important;
+}
+
+/*
+ * Prima Row
+ */
+#content > div:first-of-type {
+  //background: $viola-washed;
+  background: $bianco-sporco;
+
+  //Titolo "Nuova prenotazione"
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: $grigio;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    font-size: 0.75em !important;
+    line-height: 1em;
+
+    span {
+      display: block !important;
+      text-align: center;
+      color: $grigio;
+      font-family: 'Open Sans';
+    }
+  }
+}
+
+#content .cf-item-list {
+
+  .cf-item-data {
+    padding: 0;
+    border: 0;
+
+    //Nome del prodotto e prezzo - nascosti
+    .mobile-title {
+    //  display: none;
+    margin-bottom: 0;
+    padding: $line-height / 2;
+
+      h2 {
+        @include font(p, $mb: 0);
+      }
+
+      .cf-price {
+        @include font(p, $mb: 0);
+
+        strong {
+          font-size: 1em;
+        }
+      }
+    }
+
+    //Contenitore dei bottoni di prenotazione
+    .cf-item-info {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+
+      //UL che contiene i bottoni
+      .cf-item-action {
+        display: flex;
+        flex-wrap: wrap;
+
+        li a {
+          border-radius: 0;
+          font-family: 'Open Sans'
+        }
+
+        li:first-child,
+        li:nth-child(2) {
+          flex-basis: 50%;
+          flex-shrink: 0;
+          flex-grow: 0;
+          margin-top: 0;
+          line-height: $line-height;
+          font-size: 1em;
+
+          a {
+            font-size: 1em;
+          }
+        }
+
+        li:first-child a {
+          background: lighten($verde, 35%);
+          color: $verde;
+
+          &.SOLDOUT,
+          &.ERROR {
+          background: lighten($rosso, 30%);
+          color: $rosso;
+          }
+        }
+
+        li:nth-child(2) a {
+          background: $verde;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        li:nth-child(3),
+        li:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+  }
+}
