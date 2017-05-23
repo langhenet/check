@@ -1,0 +1,16 @@
+COSE DA CAPIRE DI CHECKFRONT
+	- Notifiche - Come impostare una mail che venga inviata al "vendor"
+	- Commissioni - calcolo automatico di cosa arriva da langhe e dall'eventuale sito dei clienti
+		- In tutti e i due i casi si potrebbero usare gli account staff per gestire la disponibilità
+		- Nel caso delle notifiche si potrebbe mettere lo "staff creator" se fosse possibile cambiarlo
+	- INTEGRAZIONE
+    - finire pagina calendario
+    - fare pagina modulo
+    - fare popup
+    - renderlo agnostico (togliere il viola dallo sfondo)
+
+
+	- Cose da chiedere
+    - Gestione DOMINIO
+    - Notifiche email specifiche per attività (mandare una mail al "vendor"
+    - Non Hosted Booking Page

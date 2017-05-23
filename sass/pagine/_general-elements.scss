@@ -163,6 +163,9 @@ p {
 #content > div:first-of-type {
   //background: $viola-washed;
   background: $bianco-sporco;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  z-index: 22;
 
   //Titolo "Nuova prenotazione"
   h1 {
@@ -183,6 +186,19 @@ p {
   }
 }
 
+///
+// Sezione "Hai un altra prenotazione in corso"
+#content > div[style^="font-weight:"]:nth-of-type(2) {
+  background: $pesca;
+  padding: $line-height 0;
+  color: $bianco;
+
+  .ct {
+    font-weight: normal;
+    display: block;
+  }
+}
+
 #content .cf-item-list {
 
   .cf-item-data {
@@ -193,10 +209,14 @@ p {
     .mobile-title {
     //  display: none;
     margin-bottom: 0;
-    padding: $line-height / 2;
+    padding: $line-height $line-height / 2;
+    border-top: 2px solid $grigio-chiarissimo;
 
       h2 {
         @include font(p, $mb: 0);
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $grigio;
       }
 
       .cf-price {
@@ -204,6 +224,7 @@ p {
 
         strong {
           font-size: 1em;
+          font-weight: normal;
         }
       }
     }
@@ -221,7 +242,8 @@ p {
 
         li a {
           border-radius: 0;
-          font-family: 'Open Sans'
+          font-family: 'Open Sans';
+          padding: 5px 15px;
         }
 
         li:first-child,
@@ -232,6 +254,8 @@ p {
           margin-top: 0;
           line-height: $line-height;
           font-size: 1em;
+          padding: 0 1em 1em 1em;
+          @include font(h5, $mb: 0, $mt: 0);
 
           a {
             font-size: 1em;
