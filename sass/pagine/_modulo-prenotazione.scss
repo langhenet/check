@@ -1,0 +1,280 @@
+.wrap.pad {
+  padding: $line-height;
+  background: $bianco !important;
+
+  @include breakpoint-max(md) {
+    padding: $line-height ($line-height / 2);
+  }
+}
+
+
+//TITOLO DEL MODULO
+#content > div:first-of-type h1.ct {
+  font-weight: bold;
+}
+
+//TESTO DOPO TITOLO
+#content .wrap.pad p.ct {
+  @include breakpoint-max(md) {
+    @include font(h5, $mt: 0, $mb: scale(h5, lh));
+    text-align: center;
+  }
+}
+
+
+
+#content .wrap.pad #tally.tbl.table-responsive {
+
+  //CONTENITORE BOTTONI
+  .caption {
+    padding: ($line-height / 2) 0 !important;
+    font-size: 1em;
+    margin-bottom: $line-height;
+
+    @include breakpoint-max(md){
+      @include font(h5, $mt: 0);
+      padding: 2em 0 !important;
+    }
+
+    .action {
+      overflow: hidden;
+    }
+
+    a.btn {
+      font-size: 1em;
+      border: 0;
+      padding: 0 0;
+
+      &.add {
+        color: $verde !important;
+        padding-right: $line-height / 2;
+        float: left;
+      }
+
+      &.delete {
+        color: $rosso !important;
+        padding-left: $line-height / 2;
+        float: right;
+      }
+    }
+  }
+
+/***************************************************************************************************/
+/** TABELLA
+****************************************************************************************************/
+  thead {
+    tr {
+      th {
+        font-size: 1em;
+        text-transform: uppercase;
+        padding: 0.75em;
+
+        @include breakpoint-max(md) {
+          @include font(h5, $mt: 0);
+          padding: 1em;
+        }
+
+        a {
+          color: $grigio;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr.cf-line {
+      td {
+        padding: 1em;
+        @include font(h5, $mt: 0);
+
+        @include breakpoint-max(md) {
+          line-height: 1.75em;
+        }
+
+        strong {
+          color: $grigio;
+        }
+
+        em {
+          font-size: 1em;
+        }
+
+        label {
+          margin-bottom: 0;
+
+          a,
+          a:hover {
+            color: $grigio;
+          }
+        }
+
+        &:last-child {
+          color: $grigio;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    td {
+      padding: 0 $line-height / 2;
+      text-transform: uppercase;
+      color: $grigio;
+
+      @include breakpoint-max(md) {
+        @include font(h5, $mt: 0);
+        padding: 0 1em;
+      }
+    }
+
+    tr.cf-line td {
+      padding-top: $line-height / 2;
+
+      @include breakpoint-max(md) {
+        padding-top: 1em;
+      }
+    }
+
+    tr:last-child td {
+      padding-bottom: $line-height / 2;
+
+      @include breakpoint-max(md) {
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
+
+
+/**************************************************************************************
+** TABELLA SU SMALL
+***************************************************************************************/
+
+#content .wrap.pad #tally.tbl.table-responsive {
+  table {
+    @include breakpoint-max(sm) {
+    display: block;
+
+      thead {
+        display: none;
+      }
+
+      tbody {
+        display: block;
+
+        tr {
+          display: block;
+          width: 100%;
+
+          &.cf-line {
+            border-bottom: 1px solid $grigio-chiaro;
+          }
+        }
+
+        td {
+          display: block;
+          overflow: hidden;
+          border-top: 0 !important;
+
+          &:first-child {
+            width: 100%;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: inline-block;
+            width: 49%;
+            padding-top: 0;
+          }
+        }
+      }
+
+      tfoot {
+        display: block;
+        width: 100%;
+
+        tr {
+          display: block;
+          width: 100%;
+
+          &.cf-line {
+
+          }
+
+          td {
+            display: inline-block;
+            width: 49%;
+            border-top: 0 !important;
+
+            &:first-child {
+              text-align: left;
+            }
+
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+/**************************************************************************************
+** FORM
+***************************************************************************************/
+.user fieldset .form-ol {
+  margin-top: $line-height * 2;
+
+  .form-group {
+    margin-bottom: $line-height;
+
+    .control-label {
+      color: $grigio;
+      text-transform: uppercase;
+    }
+
+    textarea.form-control {
+      min-height: $line-height * 6;
+    }
+  }
+}
+
+//RESET PADDING TOP LABEL
+.form-horizontal .control-label {
+  padding-top: 0.2em !important;
+}
+
+/**************************************************************************************
+** POLICY CANCELLAZIONE
+***************************************************************************************/
+.cf-policy {
+  margin-top: $line-height;
+  padding: $line-height;
+  margin-bottom: $line-height;
+
+  @include breakpoint-max(md) {
+    @include font(h5);
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+}
+
+///BOTTONE
+.action {
+
+  #continue.btn-primary {
+    background: $verde !important;
+    border-color: $verde !important;
+    @include font(p, $mb:0);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+#promo_link {
+  position: fixed;
+  top: -100%;
+}

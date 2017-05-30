@@ -2,22 +2,10 @@
 <html lang="en_EN" xml:lang="en_EN">
   <head>
   	<title>Barra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
   	<meta name="generator" content="Geany 1.23.1" />
 		<link href="style.css" rel="stylesheet">
-		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script>
-		$(function(){
-		    var height = window.innerHeight;
-		    $('iframe').css('height', height);
-		});
-
-		//And if the outer div has no set specific height set..
-		$(window).resize(function(){
-		    var height = window.innerHeight;
-		    $('iframe').css('height', height);
-		});
-		</script>
 	</head>
   <body>
     <div style="max-width: 415px;">
@@ -30,7 +18,7 @@
         new DROPLET.Widget ({
           host: 'langhe.checkfront.com',
           target: 'CHECKFRONT_WIDGET_01',
-          item_id: '3',
+        //  item_id: '3',
           category_id: '1',
           lang_id: 'it',
           options: 'hidedates', //hidesearch, tabs
@@ -38,5 +26,23 @@
         }).render();
       </script>
   </div>
+  <div style="max-width: 1170px; margin: 6em auto;">
+    <script type="text/javascript" src="//langhe.checkfront.com/lib/interface--31.js"></script>
+  <!-- CHECKFRONT BOOKING PLUGIN v23 -->
+  <div id="checkfront--full" style="">
+    <p id="CHECKFRONT_LOADER_2" style="background: url('//langhe.checkfront.com/images/loader.gif') left center no-repeat; padding: 5px 5px 5px 20px">Searching Availability...</p>
+  </div>
+    <script>
+      new DROPLET.Widget ({
+        host: 'langhe.checkfront.com',
+        target: 'checkfront--full',
+        //item_id: '3',
+        category_id: '1',
+        lang_id: 'it',
+        options: 'hidedates', //hidesearch, tabs
+        provider: 'droplet'
+      }).render();
+    </script>
+</div>
   </body>
 </html>

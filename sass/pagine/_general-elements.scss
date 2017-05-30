@@ -21,11 +21,61 @@ p {
   display: none;
 }
 
+
+/***********************************************************************************************************************
+/** LAYOUT GENERALE
+/**********************************************************************************************************************/
 /*
  * Contenitore calendario
  */
 #sidebar-wrapper {
   padding: 0;
+
+  @include breakpoint-min(lg) {
+    width: 30%;
+    max-width: 800px !important;
+  }
+
+  @include breakpoint-min(md) {
+    width: 40%;
+    max-width: 740px !important;
+  }
+}
+
+#content {
+  @include breakpoint-min(lg) {
+    width: 70%;
+  }
+  @include breakpoint-min(md) {
+    width: 80% !important;
+    max-width: 870px;
+
+    &:nth-child(3) {
+      width: 60% !important;
+    }
+  }
+
+  .cf-item-list .cf-item-data {
+    .cf-mobile {
+      display: none !important;
+    }
+
+    .mobile-title {
+      display: block !important;
+    }
+  }
+}
+
+#cf-cal {
+  max-width: 740px;
+  width: 100%;
+
+  @include breakpoint-min(lg) {
+    width: 100%;
+  }
+  @include breakpoint-min(sm) {
+    width: 100%;
+  }
 }
 
 
@@ -74,7 +124,11 @@ p {
         font-size: 0.75em;
         text-transform: uppercase;
         padding: 0 !important;
-        line-height: 3em !important;
+        line-height: 4em !important;
+
+        @include breakpoint-max(md) {
+          line-height: 3em !important;
+        }
       }
     }
   }
@@ -93,6 +147,15 @@ p {
         border-radius: 100%;
         background: transparent;
         color: $grigio;
+
+        @include breakpoint-max(lg) {
+          font-size: 0.75em;
+          line-height: 2em;
+        }
+        @include breakpoint-max(md) {
+          font-size: 1em;
+          line-height: $line-height;
+        }
 
         &:hover {
           border: 0;
@@ -155,6 +218,7 @@ p {
 /**********************************************************************************************************************/
 #content {
   margin-top: 0 !important;
+  margin: 0 auto !important;
 }
 
 /*
@@ -163,19 +227,28 @@ p {
 #content > div:first-of-type {
   //background: $viola-washed;
   background: $bianco-sporco;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   position: relative;
   z-index: 22;
+
+  @include breakpoint-max(md) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
 
   //Titolo "Nuova prenotazione"
   h1 {
     text-align: center;
     text-transform: uppercase;
     color: $grigio;
-    margin-top: 1em !important;
-    margin-bottom: 1em !important;
-    font-size: 0.75em !important;
-    line-height: 1em;
+    @include font(p, $mt: scale(p, lh));
+    font-size: 1em !important;
+    margin-bottom: 1.5em !important;
+
+    @include breakpoint-max(md) {
+      margin-top: 1em !important;
+      margin-bottom: 1em !important;
+      font-size: 0.75em !important;
+      line-height: 1em;
+    }
 
     span {
       display: block !important;

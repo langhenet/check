@@ -1,0 +1,95 @@
+#dialog.modal {
+  #dialog-data.modal-content {
+
+    .modal-header {
+
+    }
+
+    #cf-item-set {
+
+      .modal-body {
+
+        .cf-item {
+          h2 {
+            padding: $line-height ($line-height / 2) 0 ($line-height / 2) !important;
+            @include font(p);
+          }
+        }
+
+        .cf-item-book {
+          min-height: auto !important;
+          padding-bottom: $line-height * 2;
+          padding-left: $line-height / 2;
+          padding-right: $line-height / 2;
+
+          .cf-item-available {
+            margin-bottom: $line-height;
+
+            .AVAILABLE {
+              background: $bianco;
+              color: $verde;
+              @include font(h5, $mt: 0, $wt: bold);
+              padding: 0;
+            }
+          }
+        }
+
+        .cf-rate-info {
+          font-size: 1em;
+          padding: 0 $line-height / 2;
+          margin-bottom: $line-height;
+
+          b {
+            border-bottom-color: $verde;
+          }
+        }
+      }
+/***************************************************************************************************
+/** FOOTER
+***************************************************************************************************/
+      .modal-footer {
+        padding: $line-height / 2;
+
+        @include breakpoint-max(sm) {
+          text-align: center;
+        }
+
+        .panel-action {
+          width: 50% !important;
+          max-width: 50% !important;
+
+          @include breakpoint-max(sm) {
+            margin-bottom: $line-height;
+            max-width: 100% !important;
+            float: none !important;
+            width: 100% !important;
+            text-align: center !important;
+          }
+
+          //SCONTO
+          .cf-add-discount {
+            @include font(h5, $mb: 0);
+            font-weight: 400 !important;
+
+            .fa {
+            //  display: none;
+            }
+          }
+        }
+
+        //BOTTONE CHIUDI
+        .btn-default {
+          @include font(h5, $mb: 0, $mt: 0);
+        }
+        //BOTTONE CONTINUA
+        .btn-primary {
+          @include font(h5, $mb: 0, $mt: 0);
+          background: $verde !important;
+          border-color: $verde !important;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
