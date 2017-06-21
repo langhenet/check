@@ -83,7 +83,7 @@
   }
 
   tbody {
-    tr.cf-line {
+    tr[class^="cf-line-"] {
       td {
         padding: 1em;
         @include font(h5, $mt: 0);
@@ -111,6 +111,14 @@
 
         &:last-child {
           color: $grigio;
+        }
+      }
+
+      &.cf-opt-out {
+        background: $grigio-chiarissimo;
+
+        td {
+          background: $grigio-chiarissimo !important;
         }
       }
     }
@@ -155,6 +163,7 @@
   table {
     @include breakpoint-max(sm) {
     display: block;
+    border: 0;
 
       thead {
         display: none;
@@ -163,12 +172,20 @@
       tbody {
         display: block;
 
-        tr {
+        tr.cf-line {
+          border-top: 1px solid $grigio-chiaro;
+        }
+
+        tr[class^="cf-line-"] {
           display: block;
           width: 100%;
 
-          &.cf-line {
-            border-bottom: 1px solid $grigio-chiaro;
+
+          &.cf-opt-out {
+            td:nth-child(2),
+            td:nth-child(3) {
+              display: none;
+            }
           }
         }
 
@@ -193,6 +210,7 @@
       tfoot {
         display: block;
         width: 100%;
+        border-top: 1px solid $grigio-chiaro;
 
         tr {
           display: block;

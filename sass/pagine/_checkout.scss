@@ -1,0 +1,124 @@
+#www-booking-payment #page {
+  @include breakpoint-max(xs) {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+#www-booking-payment #content {
+  @include breakpoint-min(md) {
+    width: 100% !important;
+    max-width: 1170px;
+  }
+}
+
+///
+// TESTI INIZIALI
+///
+div#page:not(.provider-droplet) #content .container.header-section {
+  background: $bianco;
+
+  h1.ct {
+    font-size: scale(h3, fs) !important;
+    line-height: scale(h3, lh) !important;
+    margin-top: scale(h3, mt) !important;
+    margin-bottom: scale(h3, mb) !important;
+  }
+
+  p.ct {
+    text-align: center;
+  }
+
+  ul.alt-pay.ct {
+    overflow: hidden;
+    margin-bottom: $line-height;
+
+    li {
+      margin-right: $line-height;
+      
+      @include breakpoint-max(sm) {
+        margin-right: 0;
+        margin-bottom: $line-height !important;
+        width: 100%;
+      }
+    }
+  }
+}
+
+///
+// TITOLO FORM CARTA
+///
+#payment {
+  .inline-form {
+    #paynow {
+      font-size: 1em !important;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+//
+///FORM PAGAMENTO
+///
+#www-booking-payment #payment #pay {
+  font-size: 0.75em;
+  line-height: 2em;
+
+  ol {
+
+    li {
+      padding: 0 1em !important;
+      margin-bottom: 2em;
+      overflow: hidden;
+
+      &:nth-child(3) {
+        margin-bottom: 0.5em;
+      }
+
+      label {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        display: block;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      select, select[multiple],
+      input[type=text] {
+        height: auto;
+      }
+
+      #process {
+        @extend %button;
+        @include button(p, 4);
+        @include button-color(none, main);
+        text-transform: uppercase;
+
+        &:hover {
+          @include button-color(hover, main);
+        }
+      }
+    }
+  }
+}
+
+//FATTURA SU SCHERMI GRANDI
+#invoice {
+  @include breakpoint-min(xl) {
+    width: 720px;
+  }
+}
+
+//FATTURA SU MOBILE
+#mobile-invoice {
+  font-size: 0.75em;
+
+  th {
+    @include breakpoint-max(xs) {
+      padding: 1em 0;
+    }
+  }
+}

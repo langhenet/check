@@ -282,12 +282,16 @@ p {
     .mobile-title {
     //  display: none;
     margin-bottom: 0;
-    padding: $line-height $line-height / 2;
+    padding: ($line-height * 1.5) ($line-height / 2) $line-height ($line-height / 2);
     border-top: 2px solid $grigio-chiarissimo;
+
+    @include breakpoint-max(xs) {
+      border-top: 0;
+    }
 
       h2 {
         @include font(p, $mb: 0);
-        text-transform: uppercase;
+      //  text-transform: uppercase;
         font-weight: bold;
         color: $grigio;
       }
@@ -329,6 +333,12 @@ p {
           font-size: 1em;
           padding: 0 1em 1em 1em;
           @include font(h5, $mb: 0, $mt: 0);
+          max-width: 250px;
+
+          @include breakpoint-max(xs) {
+            //padding: 0 0 1em 0;
+            padding: 0;
+          }
 
           a {
             font-size: 1em;
@@ -337,12 +347,24 @@ p {
 
         li:first-child a {
           background: lighten($verde, 35%);
+          background: $bianco;
           color: $verde;
+
+          @include breakpoint-max(xs) {
+            border-top: 1px solid lighten($verde, 30%);
+            border-bottom: 1px solid lighten($verde, 30%);
+          }
 
           &.SOLDOUT,
           &.ERROR {
-          background: lighten($rosso, 30%);
-          color: $rosso;
+            background: lighten($rosso, 30%);
+            background: $bianco;
+            color: $rosso;
+
+            @include breakpoint-max(xs) {
+              border-top: 1px solid lighten($rosso, 30%);
+              border-bottom: 1px solid lighten($rosso, 30%);
+            }
           }
         }
 
@@ -351,6 +373,11 @@ p {
           color: #fff;
           text-transform: uppercase;
           font-weight: bold;
+
+          @include breakpoint-max(xs) {
+            border-top: 1px solid $verde;
+            border-bottom: 1px solid $verde;
+          }
         }
 
         li:nth-child(3),
