@@ -368,6 +368,14 @@ p {
           }
         }
 
+        li:first-child a.btn.btn-primary.gc-buy {
+          background: $verde !important;
+          color: #fff !important;
+          text-transform: uppercase;
+          font-weight: bold;
+          //margin-left: $line-height !important;
+        }
+
         li:nth-child(2) a {
           background: $verde;
           color: #fff;
